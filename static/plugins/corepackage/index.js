@@ -288,29 +288,65 @@
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.cron_expression+'</span></td>').appendTo(trTemp);
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.plan_desc+'</span></td>').appendTo(trTemp);
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.create_time+'</span></td>').appendTo(trTemp);
-            var tdDel=$('<td class="zr-tr-cell zr-td"><div class="zr-table-handle"><a href="javascript:;" class="t">删除</a></div></td>').appendTo(trTemp);
-            tdDel.bind('click',item,function (e) {
+            var tdDel=$('<td class="zr-tr-cell zr-td"><div class="zr-table-handle"><a href="javascript:;" class="t">删除</a><a href="javascript:;" style="margin-left: 15px;" class="t">修改</a></div></td>').appendTo(trTemp);
+            tdDel.find('a:eq(0)').bind('click',item,function (e) {
                 DelTask(e.data);
+            });
+            tdDel.find('a:eq(1)').bind('click',item,function (e) {
+                AddTask(e.data);
             });
         }
     }
-    function AddTask() {
-        var ps={
-            plan_name:'批量测试2台Linux',
-            plan_status:0,
-            begin_time:'2018-10-24 17:17:25',
-            end_time:'2018-11-24 17:17:25',
-            plan_type:1,
-            sys_type:1,
-            cron_expression:'03 14 11 06 07 ?',
-            plan_desc:'安全巡检'
-        }
-
-        $.getJSON(me.rootPath + 'task/save.data', {json:utils.fromJSON(ps)}, function (json, scope) {
-            if(json.success){
-                layer.msg("添加成功");
-                LoadTask('', 1, 5);
+    function AddTask(row) {
+        me.mainEl.empty();
+        me.mainEl.load('/static/page/inspect/add-inspect.html',function (e1) {
+            if (row) {
+                var uname = me.mainEl.find('#name').val(row.plan_name);
+                var company = me.mainEl.find('#core').val(row.cron_expression);
+                var tel = me.mainEl.find('#ip').val(row.ip);
+                var remark = me.mainEl.find('#remark').val(row.plan_desc);
             }
+            me.mainEl.find('#inspectCommit').bind('click', function (e) {
+                var uname = me.mainEl.find('#name').val();
+                var company = me.mainEl.find('#core').val();
+                var ip = me.mainEl.find('#ip').val();
+                var remark = me.mainEl.find('#remark').val();
+                if(!uname){
+                    layer.msg('名称必需填写');
+                    return;
+                }
+                var ps = {
+                    plan_name: uname||'批量测试2台Linux',
+                    plan_status: 0,
+                    begin_time: '2018-10-24 17:17:25',
+                    end_time: '2018-11-24 17:17:25',
+                    plan_type: 1,
+                    ip: ip,id:-1,
+                    sys_type: 1,
+                    cron_expression: company||'03 14 11 06 07 ?',
+                    plan_desc: remark||'安全巡检'
+                }
+                if(row){
+                    ps.id=row.id;
+                }
+                $.getJSON(me.rootPath + 'task/save.data', {json: utils.fromJSON(ps)}, function (json, scope) {
+                    if (json.success) {
+                        layer.msg("添加成功");
+                        //LoadTask('', 1, 5);
+                        LoadInspectList(me.mainEl);
+                    }
+                });
+            });
+
+            me.mainEl.find('#inspectReset').bind('click',function (e) {
+                var uname=me.mainEl.find('#name').val('');
+                var company=me.mainEl.find('#core').val('');
+                var tel=me.mainEl.find('#ip').val('');
+                var remark=me.mainEl.find('#remark').val('');
+            });
+            me.mainEl.find('#inspectBack').bind('click',function (e) {
+                LoadInspectList(me.mainEl);
+            });
         });
     }
 
@@ -325,6 +361,7 @@
     }
 
     function LoadInspectList(el) {
+        el.empty();
         var pEl=$('<P style="margin: 20px;"></P>').appendTo(el);
         me.iwfGrid=$('<div class="zr-table-wrap" style="padding:0px 20px;"></div>').appendTo(el);
         me.iwfPage=$('<div class="zr-table-wrap" style="margin: 20px;"></div>').appendTo(el);
@@ -366,8 +403,8 @@
 
     function flash(args, tab) {
         if (tab.c.children().length == 0) {
-            var body=$('<div class="" style="margin-left:0;margin-right:0px;"></div>').appendTo(tab.c);
-            LoadInspectList(body);
+            me.mainEl=$('<div class="" style="margin-left:0;margin-right:0px;"></div>').appendTo(tab.c);
+            LoadInspectList(me.mainEl);
             // body.bind('click', function (e) {
             //     var data = {icon: 'icon-sitemap', color: 'icon-red', 'a': 'linkroad', 'b': 'linkroad'};
             //     var me = window.framework;

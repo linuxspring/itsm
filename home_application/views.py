@@ -176,8 +176,15 @@ def inpectSave(request):
     maxid = TInspectPlan.objects.aggregate(Max('id'))
     maxid = maxid['id__max']
     autoid = 'D{0:0>6}'.format(7)
-    res = TInspectPlan(cron_expression=dict['cron_expression'], plan_name=dict['plan_name'], begin_time=dict['begin_time'],
+    if dict['id'] > 0:
+        res = TInspectPlan(id=dict['id'],cron_expression=dict['cron_expression'],ip=dict['ip'], plan_name=dict['plan_name'], begin_time=dict['begin_time'],
                         end_time=dict['end_time'], sys_type=dict['sys_type'], plan_status=0, plan_desc=dict['plan_desc'],create_time=datetime.datetime.now()).save()
+    else:
+        res = TInspectPlan(cron_expression=dict['cron_expression'], ip=dict['ip'], plan_name=dict['plan_name'],
+                       begin_time=dict['begin_time'],
+                       end_time=dict['end_time'], sys_type=dict['sys_type'], plan_status=0, plan_desc=dict['plan_desc'],
+                       create_time=datetime.datetime.now()).save()
+
     if res:
         result = {'success': True, 'msg': 'ok'}
     else:
@@ -191,8 +198,14 @@ def userSave(request):
     maxid = AccountBkuser.objects.aggregate(Max('id'))
     maxid = maxid['id__max']
     autoid = 'D{0:0>6}'.format(7)
-    res = AccountBkuser(chname=dict['chname'], phone=dict['phone'], username=dict['username'],
+    if dict['id']>0:
+        res = AccountBkuser(id=dict['id'],chname=dict['chname'],qq=dict['qq'], phone=dict['phone'], username=dict['username'],
+                            is_superuser=dict['is_superuser'], email=dict['email'], is_staff=0, company=dict['company'],
+                            date_joined=datetime.datetime.now(), last_login=datetime.datetime.now()).save()
+    else:
+        res = AccountBkuser(chname=dict['chname'], qq=dict['qq'], phone=dict['phone'], username=dict['username'],
                        is_superuser=dict['is_superuser'], email=dict['email'], is_staff=0, company=dict['company'],date_joined=datetime.datetime.now(),last_login=datetime.datetime.now()).save()
+
     if res:
         result = {'success': True, 'msg': 'ok'}
     else:

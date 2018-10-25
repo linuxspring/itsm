@@ -75,29 +75,47 @@ IWF.plugins['inspect'] = function () {
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.cron_expression+'</span></td>').appendTo(trTemp);
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.plan_desc+'</span></td>').appendTo(trTemp);
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.create_time+'</span></td>').appendTo(trTemp);
-            var tdDel=$('<td class="zr-tr-cell zr-td"><div class="zr-table-handle"><a href="javascript:;" class="t">删除</a></div></td>').appendTo(trTemp);
-            tdDel.bind('click',item,function (e) {
+            var tdDel=$('<td class="zr-tr-cell zr-td"><div class="zr-table-handle"><a href="javascript:;" class="t">删除</a><a href="javascript:;" style="margin-left: 15px;" class="t">修改</a></div></td>').appendTo(trTemp);
+            tdDelfind('a:eq(0)').bind('click',item,function (e) {
                 DelTask(e.data);
+            });
+            tdDelfind('a:eq(1)').bind('click',item,function (e) {
+                AddTask(e.data);
             });
         }
     }
     function AddTask() {
-        var ps={
-            plan_name:'批量巡检2台Linux',
-            plan_status:0,
-            begin_time:'2018-10-24 17:17:25',
-            end_time:'2018-11-24 17:17:25',
-            plan_type:1,
-            sys_type:1,
-            cron_expression:'03 14 11 06 07 ?',
-            plan_desc:'安全巡检'
-        }
-
-        $.getJSON(me.rootPath + 'task/save.data', {json:utils.fromJSON(ps)}, function (json, scope) {
-            if(json.success){
-                layer.msg("添加成功");
-                LoadTask('', 1, 5);
+        me.mainEl.empty();
+        me.mainEl.load('/static/page/user/add-inspect.html',function (e1) {
+            if (row) {
+                var uname = me.mainEl.find('#username').val(row.chname);
+                var company = me.mainEl.find('#company').val(row.company);
+                var tel = me.mainEl.find('#tel').val(row.phone);
+                var remark = me.mainEl.find('#qq').val();
             }
+            me.mainEl.find('#userCommit').bind('click', function (e) {
+                var uname = me.mainEl.find('#username').val();
+                var company = me.mainEl.find('#company').val();
+                var tel = me.mainEl.find('#tel').val();
+                var remark = me.mainEl.find('#qq').val();
+                var ps = {
+                    plan_name: '批量巡检2台Linux',
+                    plan_status: 0,
+                    begin_time: '2018-10-24 17:17:25',
+                    end_time: '2018-11-24 17:17:25',
+                    plan_type: 1,
+                    sys_type: 1,
+                    cron_expression: '03 14 11 06 07 ?',
+                    plan_desc: '安全巡检'
+                }
+
+                $.getJSON(me.rootPath + 'task/save.data', {json: utils.fromJSON(ps)}, function (json, scope) {
+                    if (json.success) {
+                        layer.msg("添加成功");
+                        LoadTask('', 1, 5);
+                    }
+                });
+            });
         });
     }
 
@@ -112,6 +130,7 @@ IWF.plugins['inspect'] = function () {
     }
 
     function LoadInspectList(el) {
+        el.empty();
         var pEl=$('<P style="margin: 20px;"></P>').appendTo(el);
         me.iwfGrid=$('<div class="zr-table-wrap" style="padding:0px 20px;"></div>').appendTo(el);
         me.iwfPage=$('<div class="zr-table-wrap" style="margin: 20px;"></div>').appendTo(el);
@@ -154,12 +173,11 @@ IWF.plugins['inspect'] = function () {
 
     function flash(args, tab) {
         if (tab.c.children().length == 0) {
-            var temp = $('<div class="row no-padding no-margin"></div>').appendTo(tab.c);
+            me.mainEl = $('<div class="row no-padding no-margin"></div>').appendTo(tab.c);
             //temp.load('page/knowledge/add-knowledge.html',function (e) {
 
             //});
-            var tEl = $('<table class="layui-hide" id="demo" lay-filter="test"></table>').appendTo(temp)
-            LoadInspectList(temp);
+            LoadInspectList(me.mainEl);
         }
         me.execCommand('show', {a: args.a});
 

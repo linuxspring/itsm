@@ -75,29 +75,67 @@ IWF.plugins['alarm'] = function () {
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.email+'</span></td>').appendTo(trTemp);
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.is_staff+'</span></td>').appendTo(trTemp);
             var th=$('<td class="zr-tr-cell zr-td"><span class="t">'+item.last_login+'</span></td>').appendTo(trTemp);
-            var tdDel=$('<td class="zr-tr-cell zr-td"><div class="zr-table-handle"><a href="javascript:;" class="t">删除</a></div></td>').appendTo(trTemp);
-            tdDel.bind('click',item,function (e) {
+            var tdDel=$('<td class="zr-tr-cell zr-td"><div class="zr-table-handle"><a href="javascript:;" class="t">删除</a><a href="javascript:;" style="margin-left: 15px;" class="t">修改</a></div></td>').appendTo(trTemp);
+            tdDel.find('a:eq(0)').bind('click',item,function (e) {
                 DelTask(e.data);
+            });
+            tdDel.find('a:eq(1)').bind('click',item,function (e) {
+                AddTask(e.data);
             });
         }
     }
-    function AddTask() {
-        var ps={
-            chname:'中软用户',
-            phone:'18588499892',
-            username:'gzcss_'+utils.guid(),
-            is_superuser:1,
-            is_staff:1,
-            email:'381263761@qq.com',
-            company:'广州中软信息技术有限公司'
-        }
-
-        $.getJSON(me.rootPath + 'user/save.data', {json:utils.fromJSON(ps)}, function (json, scope) {
-            if(json.success){
-                layer.msg("添加成功");
-                LoadTask('', 1, 5);
+    function AddTask(row) {
+        me.mainEl.empty();
+        me.mainEl.load('/static/page/user/add-user.html',function (e1) {
+            if(row){
+                var uname=me.mainEl.find('#username').val(row.chname);
+                var company=me.mainEl.find('#company').val(row.company);
+                var tel=me.mainEl.find('#tel').val(row.phone);
+                var remark=me.mainEl.find('#qq').val();
             }
+            me.mainEl.find('#userCommit').bind('click',function (e) {
+                var uname=me.mainEl.find('#username').val();
+                var company=me.mainEl.find('#company').val();
+                var tel=me.mainEl.find('#tel').val();
+                var remark=me.mainEl.find('#qq').val();
+                if(!uname){
+                    layer.msg('名称必需填写');
+                    return;
+                }
+                var ps={
+                        chname:uname||'中软用户',
+                        phone:tel||'18588499892',
+                        username:'gzcss_'+utils.guid(),
+                        is_superuser:1,
+                        is_staff:1,id:-1,
+                        qq:remark,
+                        email:'381263761@qq.com',
+                        company:company||'广州中软信息技术有限公司'
+                    }
+                if(row){
+                    ps.id=row.id;
+                }
+                    $.getJSON(me.rootPath + 'user/save.data', {json:utils.fromJSON(ps)}, function (json, scope) {
+                        if(json.success){
+                            layer.msg("添加成功");
+                            //LoadTask('', 1, 5);
+                            LoadInspectList(me.mainEl);
+                        }
+                    });
+            });
+
+            me.mainEl.find('#userReset').bind('click',function (e) {
+                var uname=me.mainEl.find('#username').val('');
+                var company=me.mainEl.find('#company').val('');
+                var tel=me.mainEl.find('#tel').val('');
+                var remark=me.mainEl.find('#qq').val('');
+            });
+            me.mainEl.find('#userBack').bind('click',function (e) {
+                LoadInspectList(me.mainEl);
+            });
         });
+
+
     }
 
     function DelTask(row) {
@@ -114,6 +152,7 @@ IWF.plugins['alarm'] = function () {
     }
 
     function LoadInspectList(el) {
+        el.empty();
         var pEl=$('<P style="margin: 20px;"></P>').appendTo(el);
         me.iwfGrid=$('<div class="zr-table-wrap" style="padding:0px 20px;"></div>').appendTo(el);
         me.iwfPage=$('<div class="zr-table-wrap" style="margin: 20px;"></div>').appendTo(el);
@@ -156,12 +195,11 @@ IWF.plugins['alarm'] = function () {
 
     function flash(args, tab) {
         if (tab.c.children().length == 0) {
-            var temp = $('<div class="row no-padding no-margin"></div>').appendTo(tab.c);
+            me.mainEl = $('<div class="row no-padding no-margin"></div>').appendTo(tab.c);
             //temp.load('page/knowledge/add-knowledge.html',function (e) {
 
             //});
-            var tEl = $('<table class="layui-hide" id="demo" lay-filter="test"></table>').appendTo(temp)
-            LoadInspectList(temp);
+            LoadInspectList(me.mainEl);
         }
         me.execCommand('show', {a: args.a});
 
