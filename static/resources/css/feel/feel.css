@@ -1,0 +1,142 @@
+body {
+    background-color: #f7f7f7;
+}
+.zr-system-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.form-handle {
+    display: table;
+    position: relative;
+    width: 100%;
+    padding: 10px 20px 10px 0;
+    background-color: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.form-handle-left,
+.form-handle-right {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+.form-handle-right {
+    text-align: right;
+}
+.form-handle-right .form-handle-btn {
+    white-space: nowrap;
+}
+.form-handle-right button {
+    margin-left: 20px;
+}
+.form-handle-table {
+    width: 784px;
+    table-layout: fixed;
+}
+.form-handle-table .form-list {
+    position: relative;
+    padding: 10px 0;
+}
+.form-handle-table .form-list-1 {
+    width: 228px;
+}
+.form-handle-table .form-list-2 {
+    width: 354px;
+}
+.form-handle-table .form-list-3 {
+    width: 192px;
+    padding-left: 10px;
+}
+.form-handle-table .zr-form-type {
+    width: 108px;
+}
+.form-handle-table .info {
+    width: 100%;
+    height: 28px;
+    line-height: 18px;
+    border: 1px solid #91cafb;
+    border-radius: 2px;
+}
+.form-handle-table .calend-mode-wrap {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    padding-right: 10px;
+    border: 1px solid #99d5ff;
+    border-radius: 2px;
+    background-color: #fff;
+    z-index: 99;
+}
+.form-handle-table .calend-mode-wrap .calend-list {
+    float: left;
+    position: relative;
+    width: 105px;
+    height: 100%;
+    padding: 0 25px 0 10px;
+    line-height: 26px;
+    background: url("../../images/common/icon-15.png") no-repeat right 3px;
+}
+.form-handle-table .calend-mode-wrap>.t {
+    float: left;
+    line-height: 26px;
+    padding: 0 7px;
+    font-size: 14px;
+}
+.fast-dater {
+    position: relative;
+    width: 181px;
+    height: 28px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.fast-dater>li {
+    float: left;
+    margin-left: -1px;
+    width: 61px;
+    height: 100%;
+    vertical-align: middle;
+    line-height: 26px;
+    text-align: center;
+    border: 1px solid #99d5ff;
+    cursor: pointer;
+}
+.fast-dater>li:first-child {
+    margin-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.fast-dater>li:first-child+li+li {
+    border-radius: 0 3px 3px 0;
+}
+.fast-dater>li.cur {
+    background-color: #0096ff;
+    color: #fff;
+    border-color: #0096ff;
+}
+
+.data-tab-mode .data-tab-head {
+    border-width: 1px 0 1px 0;
+}
+.filter-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.filter-list {
+    float: left;
+    position: relative;
+    margin: 10px 20px 10px 0;
+}
+.norm-show-table {
+    position: relative;
+    width: 100%;
+}
+.norm-show-wrap .zr-table-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+.norm-show-wrap .zr-table-handle .t {
+    color: #0096ff;
+}

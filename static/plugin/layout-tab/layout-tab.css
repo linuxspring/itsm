@@ -1,0 +1,133 @@
+.zr-layout-cont {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 31px;
+}
+.zr-layout-label-wrap,
+.zr-layout-label-wrap * {
+    box-sizing: border-box;
+}
+.zr-layout-label-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 31px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #e0e2e4;
+    z-index: 10;
+}
+.zr-layout-label-mode {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.zr-layout-label-mode:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f7f7f7;
+}
+.zr-layout-label-list {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    padding: 0 3px;
+    font-size: 0;
+    white-space: nowrap;
+}
+.zr-layout-label-list>li {
+    display: inline-block;
+    position: relative;
+    padding: 0 2px;
+    height: 26px;;
+    width: auto;
+    min-width: 80px;
+    max-width: 200px;
+    vertical-align: bottom;
+}
+.zr-layout-label-list>li.cur {
+    height: 31px;
+}
+.zr-layout-label-list>li.cur .zr-layout-label {
+    border-bottom-width: 0;
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffff, endcolorstr=#f7f7f7, gradientType=1);
+    background: -webkit-linear-gradient(top, #fff 40%, #f7f7f7);
+    background: -moz-linear-gradient(top, #fff 40%, #f7f7f7);
+    background: -ms-linear-gradient(top, #fff 40%, #f7f7f7);
+    background: -o-linear-gradient(top, #fff 40%, #f7f7f7);
+    background: linear-gradient(top, #fff 40%, #f7f7f7);
+}
+.zr-layout-label {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 0 25px 0 20px;
+    border: 1px solid #c9ced0;
+    border-radius: 4px 4px 0 0;
+    background-color: #fff;
+    cursor: default;
+    border-bottom-color: transparent;
+}
+.zr-layout-label .t {
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    padding-bottom: 1px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background: transparent;
+}
+.zr-layout-label .c {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto 0;
+    width: 9px;
+    height: 9px;
+    background: url("images/icon-1.png") no-repeat center;
+    cursor: pointer;
+    vertical-align: middle;
+    z-index: 1;
+}
+.zr-layout-iframe-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.zr-layout-iframe-mode {
+    position: relative;
+    display: none;
+    width: 100%;
+    /*height: 100%;*/
+    overflow: hidden;
+}
+.zr-layout-iframe-mode.cur {
+    display: block;
+}
+.zr-layout-label-iframe {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.zr-layout-iframe-mode .zr-system-prog {
+    position: absolute;
+    z-index: 999;
+}

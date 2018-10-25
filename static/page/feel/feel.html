@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="../../css/common/normalize.min.css">
+    <link rel="stylesheet" href="../../css/common/zr-css.css">
+    <link rel="stylesheet" href="../../plugin/table/table.css">
+    <link rel="stylesheet" href="../../plugin/calendar/calendar.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/item-common.css">
+    <link rel="stylesheet" href="../../css/feel/feel.css">
+    <script src="../../lib/jquery-1.12.3.min.js"></script>
+    <script src="../../lib/tools.js"></script>
+    <script src="../../plugin/calendar/calendar.js"></script>
+    <script src="../../plugin/table/table.js"></script>
+    <script src="../../lib/zr-css.js"></script>
+    <script src="../../js/feel/feel.js"></script>
+</head>
+<body>
+    <div class="zr-system-layout" id="zr-system-layout">
+        <!-- 搜索栏 -->
+        <div class="form-handle zr-css">
+            <div class="form-handle-left">
+                <table class="form-handle-table">
+                    <tr>
+                        <td class="form-list form-list-1">
+                            <div class="zr-form-list">
+                                <div class="zr-form-type">
+                                    <label for="" class="zr-form-label">报告编号</label>
+                                </div>
+                                <div class="zr-form-cont">
+                                    <input type="text" class="info">
+                                </div>
+                            </div>
+                        </td>
+                        <td class="form-list form-list-2">
+                            <div class="zr-form-list">
+                                <div class="zr-form-type">
+                                    <label for="" class="zr-form-label">日期</label>
+                                </div>
+                                <div class="zr-form-cont">
+                                    <div class="calend-mode-wrap">
+                                        <div class="calend-list" id="calend-start"></div>
+                                        <span class="t">至</span>
+                                        <div class="calend-list" id="calend-end"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="form-list form-list-3">
+                            <ul class="fast-dater">
+                                <li class="cur">今天</li>
+                                <li>本周</li>
+                                <li>本月</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-list">
+                            <div class="zr-form-list">
+                                <div class="zr-form-type">
+                                    <label for="" class="zr-form-label">接收人</label>
+                                </div>
+                                <div class="zr-form-cont">
+                                    <input type="text" class="info">
+                                </div>
+                            </div>
+                        </td>
+                        <td class="form-list">
+                            <div class="zr-form-list">
+                                <div class="zr-form-type">
+                                    <label for="" class="zr-form-label">标题</label>
+                                </div>
+                                <div class="zr-form-cont">
+                                    <input type="text" class="info">
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-handle-right">
+                <div class="form-handle-btn">
+                    <button class="sys-btn btn-blue-sx">查询</button>
+                    <button class="sys-btn btn-while-kx">重置</button>
+                </div>
+            </div>
+        </div>
+        <!-- tab指标展示 -->
+        <div class="norm-wrap">
+            <div class="data-tab-mode">
+                <div class="data-tab-head">
+                    <ul class="tab-title">
+                        <li class="cur">
+                            <p class="t">可信性</p>
+                        </li>
+                        <li>
+                            <p class="t">可用性</p>
+                        </li>
+                        <li>
+                            <p class="t">可靠性</p>
+                        </li>
+                        <li>
+                            <p class="t">防危性</p>
+                        </li>
+                        <li>
+                            <p class="t">完整性</p>
+                        </li>
+                        <li>
+                            <p class="t">可维性</p>
+                        </li>
+                    </ul>
+                    <div class="filter-handle">
+                        <ul class="filter-handle-wrap">
+                            <li>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">只查看异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">查看所属物理机异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">只查看异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">查看所属物理机异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">只查看异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">查看所属物理机异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">只查看异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">查看所属物理机异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">只查看异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">查看所属物理机异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">只查看异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-list">
+                                    <div class="like-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                            <em>&nbsp;</em>
+                                            <span class="t">查看所属物理机异常指标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="data-tab-cont">
+                    <div class="tab-cont">
+                        <div class="norm-show-wrap">
+                            <div class="norm-show-table">
+                                <div class="zr-table-wrap">
+                                    <table class="zr-table-cont zr-table-main">
+                                        <thead>
+                                            <tr class="zr-tr">
+                                                <th class="zr-tr-cell zr-th th-1">
+                                                    <span class="t">排名</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">表格类别</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">指标名称</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th th-2">
+                                                    <span class="t">指标描述</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">正常参考</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">单位</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">可用性50%</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">可靠性42%</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">防危性2%</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">完整性4%</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">可维护性2%</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th th-3">
+                                                    <span class="t">资源类型</span>
+                                                </th>
+                                                <th class="zr-tr-cell zr-th">
+                                                    <span class="t">操作</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">1</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">2</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">3</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">4</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">6</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">7</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">8</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">9</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="zr-tr">
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">10</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">计算机资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">cpu_esx</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">由 ESX 调度程序专门提供的CPU资源</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="t">30</div>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">5%</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t"></span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <span class="t">物理机、虚拟机</span>
+                                                </td>
+                                                <td class="zr-tr-cell zr-td">
+                                                    <div class="zr-table-handle">
+                                                        <a href="javascript:;" class="t">新建规则</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="zr-page-wrap">
+                                <button class="zr-page-btn zr-page-first">首页</button>
+                                <button class="zr-page-btn zr-page-prev">&lt;上一页</button>
+                                <button class="zr-page-btn zr-page-txt cur">1</button>
+                                <button class="zr-page-btn zr-page-txt">2</button>
+                                <button class="zr-page-btn zr-page-txt">3</button>
+                                <button class="zr-page-btn zr-page-txt">4</button>
+                                <button class="zr-page-btn zr-page-txt">...</button>
+                                <button class="zr-page-btn zr-page-txt">12</button>
+                                <button class="zr-page-btn zr-page-next">下一页&gt;</button>
+                                <button class="zr-page-btn zr-page-last">末页</button>
+                                <input type="text" class="zr-page-input">
+                                <button class="zr-page-btn zr-page-go">跳转</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

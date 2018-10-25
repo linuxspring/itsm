@@ -16,4 +16,12 @@ urlpatterns = patterns(
     (r'^$', 'home'),
     (r'^dev-guide/$', 'dev_guide'),
     (r'^contactus/$', 'contactus'),
+    (r'^user/getInfo.data', 'getUserInfo'),
+    (r'^task/view.data', 'inpectList'),
+    (r'^task/save.data', 'inpectSave'),
+    (r'^task/del.data', 'inpectDel'),
+
+    (r'^user/view.data', 'userList'),
+    (r'^user/save.data', 'userSave'),
+    (r'^user/del.data', 'userDel'),
 )

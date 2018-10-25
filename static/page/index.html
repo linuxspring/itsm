@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <title>广东电网珠海供电局</title>
+    <script src="../lib/tools.js"></script>
+    <script src="../plugin/layout/layout.js"></script>
+    <script>
+        var ohtml = document.getElementsByTagName('html')[0];
+        var prog = new PageLoadProg(ohtml);
+    </script>
+    <link rel="stylesheet" href="../css/common/normalize.min.css">
+    <link rel="stylesheet" href="../css/common/common.css">
+    <link rel="stylesheet" href="../plugin/layout/layout.css">
+    <link rel="stylesheet" href="../plugin/layout-tab/layout-tab.css">
+    <link rel="stylesheet" href="../plugin/scroll/scroll.css">
+    <link rel="stylesheet" href="../plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/common/animate.css">
+    <script src="../lib/jquery-1.12.3.min.js"></script>
+    <script src="../plugin/layui/layui.js"></script>
+    <script src="../plugin/layout-tab/layout-tab.js"></script>
+    <script src="../plugin/menu-tree/menu-tree.js"></script>
+    <script src="../plugin/scroll/scroll.js"></script>
+    <script src="../js/index.js"></script>
+</head>
+<body>
+    <div class="zr-system-layout" id="zr-system-layout">
+        <div class="zr-layout-main min-show">
+            <div class="zr-layout-move"></div>
+            <div class="zr-layout-table">
+                <div class="zr-layout-left">
+                    <div class="zr-navigation-wrap">
+                        <!-- 这里放置菜单栏部分的内容，最好所有内容用一个div封装放这里 -->
+                        <div class="navigation">
+                            <div class="nav-handle">
+                                <button class="nav-flex nav-icon">&nbsp;</button>
+                                <ul class="nav-lock">
+                                    <li class="on cur">&nbsp;</li>
+                                    <li class="off">&nbsp;</li>
+                                </ul>
+                            </div>
+                            <div class="nav-mode-wrap">
+                                <div class="nav-mode"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zr-layout-right">
+                    <div class="zr-layout-wrap">
+                        <div class="zr-layout-header clear">
+                            <div class="logo-wrap">
+                                <div class="logo-mode" data-title="首页" data-src="home/home.html">
+                                    <img src="../images/common/logo.png" alt="" class="logo-icon" title="中国南方电网">
+                                    <span class="logo" title="广东电网珠海供电局">广东电网珠海供电局</span>
+                                </div>
+                            </div>
+                            <div class="handle-wrap">
+                                <div class="handle-list">
+                                    <p class="username" title="陈某韩">陈某韩</p>
+                                </div>
+                                <div class="handle-list">
+                                    <button class="out-btn" title="退出">退出</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 这里放置这里放置内容模块，最好所有内容用一个div封装放这里，如果需要tab页模式的，请再往下嵌套 -->
+                        <div class="zr-layout-cont">
+                            <div class="zr-layout-label-wrap">
+                                <div class="zr-layout-label-mode">
+                                    <ul class="zr-layout-label-list">
+                                        <li class="cur">
+                                            <div class="zr-layout-label">
+                                                <button class="t" title="首页">首页</button>
+                                                <button class="c">&nbsp;</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="zr-layout-iframe-wrap">
+                                <div class="zr-layout-iframe-mode cur">
+                                    <iframe src="home/home.html" frameborder="0" class="zr-layout-label-iframe"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

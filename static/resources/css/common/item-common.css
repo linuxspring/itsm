@@ -1,0 +1,358 @@
+.zr-css .select-input .select-view {
+    border-color: #91cafb;
+    border-radius: 2px;
+}
+.reveal-mode {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.reveal-mode .reveal-head {
+    position: relative;
+    width: 100%;
+    height: 41px;
+    border-bottom: 1px solid #ddd;
+}
+.reveal-mode .reveal-head p.title {
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.reveal-mode .reveal-cont {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.data-tab-mode {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    border-top: 0;
+    background-color: #fff;
+}
+.data-tab-mode .data-tab-head {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid #99d5ff;
+    background-color: #f2faff;
+}
+.data-tab-mode .data-tab-head p.title {
+    position: relative;
+    float: left;
+    line-height: 38px;
+    font-size: 16px;
+}
+.data-tab-mode .tab-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.data-tab-mode .tab-title:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 1px;
+    height: 100%;
+    background-color: #99d5ff;
+}
+.data-tab-mode .tab-title>li {
+    position: relative;
+    float: left;
+    padding: 0 20px;
+    height: 40px;
+    margin-top: -1px;
+    border-top: 2px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    z-index: 1;
+    cursor: pointer;
+}
+.data-tab-mode .tab-title .t {
+    line-height: 36px;
+    color: #666;
+    font-size: 16px;
+}
+.data-tab-mode .tab-title>li.cur {
+    border-top-color: #0096ff;
+    border-right-color: #99d5ff;
+    border-left-color: #99d5ff;
+    background-color: #fff;
+}
+.data-tab-mode .tab-title>li.cur .t {
+    color: #0096ff;
+}
+.data-tab-mode .tab-title>li.cur:first-child {
+    border-left: 1px solid transparent;
+}
+.data-tab-mode .data-tab-cont {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.data-tab-mode .tab-cont {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* 简介展示模块 */
+.concise-mode {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.concise-mode .concise-head {
+    position: relative;
+    width: 100%;
+    height: 56px;
+}
+.concise-mode .concise-head>p.t {
+    position: relative;
+    padding-left: 14px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.concise-mode .concise-head>p.t:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 4px;
+    height: 16px;
+    background-color: #0096ff;
+}
+.concise-mode .concise-cont {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+/* 系统按钮 */
+/* 通用按钮 */
+button.sys-btn {
+    position: relative;
+    padding: 0 15px;
+    height: 28px;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+button.sys-btn span {
+    line-height: 1;
+    vertical-align: middle;
+}
+/* 实心蓝色按钮 */
+button.btn-blue-sx {
+    color: #fff;
+    border-color: #0096ff;
+    background-color: #0096ff;
+}
+button.btn-blue-sx:hover {
+    background-color: #0084e0;
+    border-color: #0084e0;
+}
+button.btn-blue-sx:active {
+    border-color: #0096ff;
+    background-color: #0096ff;
+}
+/* 空心蓝色按钮 */
+button.btn-blue-kx {
+    color: #0096ff;
+    background-color: #f2faff;
+    border-color: #0096ff;
+}
+button.btn-blue-kx:hover {
+    background-color: #cfedff;
+}
+button.btn-blue-kx:active {
+    background-color: #f2faff;
+}
+/* 空心白色按钮 */
+button.btn-while-kx {
+    color: #0096ff;
+    background-color: #fff;
+    border-color: #0096ff;
+}
+button.btn-while-kx:hover {
+    background-color: #f2faff;
+}
+button.btn-while-kx:active {
+    background-color: #fff;
+    color: #0096ff;
+}
+
+/* 多选 */
+.like-checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+.like-checkbox input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 14px;
+    height: 14px;
+    z-index: 2;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.like-checkbox em {
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: 1px solid #bbb;
+    background: transparent;
+    border-radius: 2px;
+    z-index: 1;
+}
+.like-checkbox input[type="checkbox"]:checked+em {
+    background: url("../../images/common/icon-16.png") no-repeat center #0092ff;
+    border-color: #0092ff;
+}
+.like-checkbox .t {
+    line-height: 1;
+    color: #666;
+}
+
+/* 表格 */
+.zr-table-cont .zr-th {
+    background-color: #d6f2fc;
+    border: 0;
+    height: 38px;
+}
+.zr-table-cont .zr-tr:nth-child(odd) .zr-td {
+    background-color: #f8f8f8;
+}
+.zr-table-cont .zr-td {
+    border: 0;
+    height: 38px;
+}
+
+/* 分页按钮 */
+.zr-page-wrap {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    font-size: 0;
+    text-align: center;
+}
+.zr-page-wrap .zr-page-btn {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    min-width: 28px;
+    margin: 0 3px;
+    padding: 0 7px;
+    line-height: 1;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #e1e6ea;
+    border-radius: 2px;
+}
+.zr-page-wrap .zr-page-btn:hover,
+.zr-page-wrap .zr-page-btn.cur {
+    color: #fff;
+    background-color: #0096ff;
+    border-color: #0096ff;
+}
+.zr-page-wrap .zr-page-btn:active {
+    background-color: #0084e0;
+    border-color: #0084e0;
+}
+.zr-page-wrap .zr-page-input {
+    width: 42px;
+    height: 100%;
+    margin: 0 2px 0 12px;
+    line-height: 18px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+}
+
+/* 日历 */
+.zr-calendar-wrap {
+    min-width: 240px;
+}
+
+/* 表单 */
+.zr-form-list {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 28px;
+    table-layout: fixed;
+}
+.zr-form-type {
+    display: table-cell;
+    position: relative;
+    white-space: nowrap;
+    padding: 0 10px;
+    vertical-align: middle;
+    text-align: right;
+}
+.zr-form-cont {
+    display: table-cell;
+    position: relative;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* 简易响应式布局 */
+.zr-lay-wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.zr-lay-row:before,
+.zr-lay-row:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+.zr-lay-col3 {
+    float: left;
+    position: relative;
+    width: 33.33333333%;
+}
+@media screen and (min-width: 600px) {
+    .zr-lay-col3 {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 980px) {
+    .zr-lay-col3 {
+        width: 33.33333333%;
+    }
+}

@@ -1,0 +1,740 @@
+/**
+* 传统公共通用组件
+* 版本：v1.0
+**/
+/* 引用全局 */
+html {
+    width: 100%;
+    height: 100%;
+}
+.zr-css,
+.zr-css *,
+.zr-css :before,
+.zr-css :after {
+    padding: 0;
+    margin: 0;
+    font: normal 14px "Arial", "Microsoft YaHei";
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+.zr-css .zr-layout .zr-layout-top:after,
+.zr-css .zr-layout .zr-layout-left:after,
+.zr-css .zr-layout .zr-layout-right:after,
+.zr-css .zr-nav-type .zr-type-ul:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+/* button按钮 */
+.zr-css button {
+    border: 0;
+    cursor: pointer;
+}
+.zr-css button.btn {
+    height: 28px;
+    padding: 0 16px;
+    border-radius: 3px;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    transition: opacity .3s;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    -o-transition: opacity .3s;
+}
+/* 表单类 */
+/* 表单包装器 */
+.zr-css .form-wrap {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 28px;
+    line-height: 0;
+}
+.zr-css .form-wrap>.label {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    height: 100%;
+    line-height: 1;
+    padding: 0 4px 0 0;
+}
+.zr-css .form-wrap>.input {
+    position: relative;
+    display: table-cell;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.zr-css .form-wrap>.input input[type="text"] {
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+/* 表单通用设置 */
+.zr-css .form-wrap>.input.disabled *,
+.zr-css .form-wrap input[disabled] {
+    cursor: not-allowed;
+}
+/* 普通单行输入框 */
+.zr-css .form-wrap>.text-input {
+    width: 100%;
+    border: 1px solid #eee;
+}
+/* 模拟简单下拉选择框 */
+.zr-css .form-wrap>.select-input {
+    width: 100%;
+}
+.zr-css .select-input .select-view {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-right: 24px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    cursor: default;
+}
+.zr-css .select-input[data-disable="true"] .select-view {
+    cursor: not-allowed;
+}
+.zr-css .select-input .select-view span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -7px;
+    padding: 0 4px;
+    line-height: 1;
+    z-index: 2;
+}
+.zr-css .select-input[data-disable="true"] span {
+    color: #aaa;
+}
+.zr-css .select-input .select-view input[type="hidden"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 1;
+}
+.zr-css .select-input .select-view>em {
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 20;
+    transition: transform .3s;
+    -webkit-transition: transform .3s;
+    -moz-transition: transform .3s;
+    -ms-transition: transform .3s;
+    -o-transition: transform .3s;
+}
+.zr-css .select-input[data-disable="true"] .select-view>em {
+    cursor: not-allowed;
+}
+.zr-css .select-input .select-view>em:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: solid transparent;
+    border-right: solid transparent;
+    border-top: solid #ccc;
+    border-width: 6px 4px 0 4px;
+}
+.zr-css .select-input .select-view>em.active {
+    transform: rotateZ(180deg);
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
+}
+.zr-css .select-input .select-option {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 1px;
+    width: 100%;
+    height: auto;
+    display: none;
+    z-index: 999;
+}
+.zr-css .select-input .select-option.show {
+    display: block;
+    animation: selectPlay .3s;
+    -webkit-animation: selectPlay .3s;
+    -moz-animation: selectPlay .3s;
+    -ms-animation: selectPlay .3s;
+    -o-animation: selectPlay .3s;
+}
+.zr-css .select-input .option-list {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    z-index: 999;
+}
+.zr-css .select-input .option-list li {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -ms-transition: background-color .3s;
+    -o-transition: background-color .3s;
+}
+.zr-css .select-input .option-list li:hover,
+.zr-css .form-wrap>.select-input .option-list li.cur {
+    background-color: #f5f5f5;
+}
+/* 单选框、复选框 */
+.zr-css .radio-input .radio-list,
+.zr-css .check-input .check-list {
+    position: relative;
+    display: table;
+    float: left;
+    margin-left: 20px;
+    height: 100%;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+.zr-css .radio-input .radio-list:first-child,
+.zr-css .check-input .check-list:first-child {
+    margin-left: 0;
+}
+.zr-css .radio-input .radio-list:after {
+    display: table-cell;
+    width: 18px;
+    height: 100%;
+    content: '';
+    background: url("../images/zr-css/radio-icon.png") no-repeat 0 center;
+}
+.zr-css .radio-input .radio-list span,
+.zr-css .check-input .check-list span {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+.zr-css .radio-input .radio-list input[type="radio"],
+.zr-css .check-input .check-list input[type="checkbox"] {
+    display: none;
+}
+.zr-css .radio-input .radio-list.ched:after {
+    background-position: -26px center;
+}
+.zr-css .check-input .check-list .icon {
+    display: table-cell;
+    width: 18px;
+    height: 100%;
+    vertical-align: middle;
+}
+.zr-css .check-input .check-list .icon:after {
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+}
+.zr-css .check-input .check-list.ched .icon:after {
+    background: url("../images/zr-css/checkbox-icon.png") no-repeat center #188eee;
+    border-color: #188eee;
+}
+
+/* 上下左右布局框架 */
+.zr-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.zr-css .zr-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 58px;
+}
+.zr-css .zr-layout .zr-layout-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 58px;
+}
+.zr-css .zr-layout .zr-layout-con {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 80px;
+}
+.zr-css .zr-layout .zr-layout-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+}
+.zr-css .zr-layout .zr-layout-right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* 菜单页签页面 */
+.zr-css .zr-nav-type {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 35px;
+}
+.zr-css .zr-nav-type .zr-type-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+}
+.zr-css .zr-nav-type .zr-type-ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("../images/zr-css/zr-type-bg.jpg") repeat-x left bottom;
+}
+.zr-css .zr-nav-type .zr-type-ul .li {
+    display: inline-block;
+    float: left;
+    width: auto;
+    padding-left: 4px;
+    z-index: 99;
+}
+.zr-css .zr-nav-type .zr-type-ul .type {
+    position: relative;
+    width: auto;
+    max-width: 300px;
+    height: 27px;
+    padding: 0 28px;
+    margin-top: 5px;
+    border: 1px solid #c9ced0;
+    border-bottom: 0;
+    border-radius: 4px 4px 0 0;
+    background-color: #fff;
+    cursor: default;
+    overflow: hidden;
+}
+.zr-css .zr-nav-type .zr-type-ul span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 28px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.zr-css .zr-nav-type .zr-type-ul em {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 18px;
+    height: 100%;
+    background: url("../images/zr-css/zr-type-close.png") no-repeat left center;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: opacity .3s;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    cursor: pointer;
+}
+.zr-css .zr-nav-type .zr-type-ul .li:hover em,
+.zr-css .zr-nav-type .zr-type-ul .li.cur em {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.zr-css .zr-nav-type .zr-type-ul .li.cur .type {
+    margin-top: 0;
+    height: 35px;
+    background: url("../images/zr-css/zr-type-bg2.jpg") repeat-x left top;
+    border-bottom: 3px solid #fff;
+}
+.zr-css .zr-nav-type .zr-type-ul .li.cur span {
+    line-height: 31px;
+}
+.zr-css .zr-type-con {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.zr-css .zr-type-con iframe.zr-type-iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+/* 展开收起 */
+.zr-css .zr-shrink {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 28px;
+    overflow: hidden;
+    transition: height .3s;
+    -webkit-transition: height .3s;
+    -moz-transition: height .3s;
+    -ms-transition: height .3s;
+    -o-transition: height .3s;
+}
+.zr-css .zr-shrink .zr-shrink-con {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+/* 左右切换 */
+.zr-switch {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    padding: 0 30px;
+}
+.zr-switch .zr-switch-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.zr-switch .zr-switch-ul {
+    transition: left .3s;
+    -webkit-transition: left .3s;
+    -moz-transition: left .3s;
+    -ms-transition: left .3s;
+    -o-transition: left .3s;
+}
+.zr-switch>.prev,
+.zr-switch>.next {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    cursor: pointer;
+}
+.zr-switch>.prev {
+    left: 0;
+}
+.zr-switch>.next {
+    right: 0;
+}
+/* 弹出层 */
+.zr-popup-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+.zr-popup-wrap .pop-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 10;
+    animation: opacity50 .3s;
+    -webkit-animation: opacity50 .3s;
+    -moz-animation: opacity50 .3s;
+    -ms-animation: opacity50 .3s;
+    -o-animation: opacity50 .3s;
+}
+.zr-popup-wrap .pop-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    background: url("../images/zr-css/loading-0.gif") no-repeat center;
+}
+.zr-popup-wrap .pop-icon-2 {
+    background: transparent;
+    width: 70px;
+    height: 20px;
+}
+.zr-popup-wrap .pop-icon-2 i.pop-i-1,
+.zr-popup-wrap .pop-icon-2 i.pop-i-2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+}
+.zr-popup-wrap .pop-icon-2 i.pop-i-1 {
+    left: 0;
+}
+.zr-popup-wrap .pop-icon-2 i.pop-i-2 {
+    left: 25px;
+}
+.zr-popup-wrap .pop-icon-2 i.pop-i-1:after,
+.zr-popup-wrap .pop-icon-2 i.pop-i-2:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: inline-block;
+    content: "";
+    font-size: 0;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.zr-popup-wrap .pop-icon-2 i.pop-i-1:after {
+    animation: toBig30 .5s alternate infinite linear;
+    -webkit-animation: toBig30 .5s alternate infinite linear;
+    -moz-animation: toBig30 .5s alternate infinite linear;
+    -ms-animation: toBig30 .5s alternate infinite linear;
+    -o-animation: toBig30 .5s alternate infinite linear;
+}
+.zr-popup-wrap .pop-icon-2 i.pop-i-2:after {
+    animation: toMin30 .5s alternate infinite linear;
+    -webkit-animation: toMin30 .5s alternate infinite linear;
+    -moz-animation: toMin30 .5s alternate infinite linear;
+    -ms-animation: toMin30 .5s alternate infinite linear;
+    -o-animation: toMin30 .5s alternate infinite linear;
+}
+/* 动画组 */
+@keyframes selectPlay {
+    from {
+        opacity: 0;
+        top: 110%;
+    }
+    to {
+        opacity: 1;
+        top: 100%;
+    }
+}
+@-webkit-keyframes selectPlay {
+    from {
+        opacity: 0;
+        top: 120%;
+    }
+    to {
+        opacity: 1;
+        top: 100%;
+    }
+}
+@-moz-keyframes selectPlay {
+    from {
+        opacity: 0;
+        top: 120%;
+    }
+    to {
+        opacity: 1;
+        top: 100%;
+    }
+}
+@-ms-keyframes selectPlay {
+    from {
+        opacity: 0;
+        top: 120%;
+    }
+    to {
+        opacity: 1;
+        top: 100%;
+    }
+}
+@-o-keyframes selectPlay {
+    from {
+        opacity: 0;
+        top: 120%;
+    }
+    to {
+        opacity: 1;
+        top: 100%;
+    }
+}
+@keyframes opacity50 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
+}
+@-webkit-keyframes opacity50 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
+}
+@-moz-keyframes opacity50 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
+}
+@-ms-keyframes opacity50 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
+}
+@-o-keyframes opacity50 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
+}
+@keyframes toBig30 {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+@-webkit-keyframes toBig30 {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+@-moz-keyframes toBig30 {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+@-ms-keyframes toBig30 {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+@-o-keyframes toBig30 {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+@keyframes toMin30 {
+    from {
+        width: 100%;
+        height: 100%;
+    }
+    to {
+        width: 0;
+        height: 0;
+    }
+}
+@-webkit-keyframes toMin30 {
+    from {
+        width: 100%;
+        height: 100%;
+    }
+    to {
+        width: 0;
+        height: 0;
+    }
+}
+@-moz-keyframes toMin30 {
+    from {
+        width: 100%;
+        height: 100%;
+    }
+    to {
+        width: 0;
+        height: 0;
+    }
+}
+@-ms-keyframes toMin30 {
+    from {
+        width: 100%;
+        height: 100%;
+    }
+    to {
+        width: 0;
+        height: 0;
+    }
+}
+@-o-keyframes toMin30 {
+    from {
+        width: 100%;
+        height: 100%;
+    }
+    to {
+        width: 0;
+        height: 0;
+    }
+}

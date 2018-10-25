@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <title>可信指标</title>
+    <link rel="stylesheet" href="../../css/common/normalize.min.css">
+    <link rel="stylesheet" href="../../css/common/zr-css.css">
+    <link rel="stylesheet" href="../../plugin/table/table.css">
+    <link rel="stylesheet" href="../../plugin/calendar/calendar.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/item-common.css">
+    <link rel="stylesheet" href="../../css/situation/trust-2.css">
+    <script src="../../lib/jquery-1.12.3.min.js"></script>
+    <script src="../../plugin/calendar/calendar.js"></script>
+    <script src="../../lib/zr-css.js"></script>
+    <!-- <script src="../../js/situation/trust-2.js"></script> -->
+</head>
+<body>
+    <div class="zr-system-layout" id="zr-system-layout">
+        <div class="data-tab-mode platform">
+            <div class="data-tab-head">
+                <p class="title">虚拟平台 01</p>
+                <button class="sys-btn btn-blue-kx go-back">返回</button>
+            </div>
+            <div class="data-tab-cont">
+                <div class="overview-wrap">
+                    <div class="overview-mode">
+                        <div class="o-left">
+                            <p class="t">可信指标</p>
+                            <p class="n">70</p>
+                        </div>
+                        <div class="o-right">
+                            <p class="t">可信指标＝ 物理机可信指标*X%+虚拟机可信指标*X%+平台资源可信指标*X%</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 机器数据 -->
+                <div class="item-wrap zr-lay-wrap clear">
+                    <!-- 模块一 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">物理机</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="echarst-wrap quota clear">
+                                        <div class="echarst-mode">
+                                            <!-- 这里放置echarst图代码 -->
+                                        </div>
+                                        <div class="echarst-info">
+                                            <div class="info-wrap">
+                                                <div class="info-list state-1">
+                                                    <p class="t">高可信 100% 3台</p>
+                                                </div>
+                                                <div class="info-list state-1">
+                                                    <p class="t">中可信 0% 0台</p>
+                                                </div>
+                                                <div class="info-list state-1">
+                                                    <p class="t">低可信 0% 0台</p>
+                                                </div>
+                                                <div class="info-list state-2">
+                                                    <p class="t">不可信 0% 0台</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="echarst-tips">可信指标=计算公式</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块二 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">虚拟机</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="echarst-wrap quota clear">
+                                        <div class="echarst-mode">
+                                            <!-- 这里放置echarst图代码 -->
+                                        </div>
+                                        <div class="echarst-info">
+                                            <div class="info-wrap">
+                                                <div class="info-list state-1">
+                                                    <p class="t">高可信 100% 3台</p>
+                                                </div>
+                                                <div class="info-list state-1">
+                                                    <p class="t">中可信 0% 0台</p>
+                                                </div>
+                                                <div class="info-list state-1">
+                                                    <p class="t">低可信 0% 0台</p>
+                                                </div>
+                                                <div class="info-list state-2">
+                                                    <p class="t">不可信 0% 0台</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="echarst-tips">可信指标=计算公式</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- 模块三 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">平台资源</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="echarst-wrap quota quota-2 clear">
+                                        <div class="echarst-info">
+                                            <div class="info-wrap">
+                                                <div class="info-list state-1">
+                                                    <p class="t">高可信 100% 3台</p>
+                                                </div>
+                                                <div class="info-list state-1">
+                                                    <p class="t">中可信 0% 0台</p>
+                                                </div>
+                                                <div class="info-list state-1">
+                                                    <p class="t">低可信 0% 0台</p>
+                                                </div>
+                                                <div class="info-list state-2">
+                                                    <p class="t">不可信 0% 0台</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="echarst-tips">可信指标=计算公式</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块四 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">物理机可信性子属性</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="norm-show-wrap">
+                                        <div class="zr-table-wrap">
+                                            <table class="zr-table-cont">
+                                                <tr class="zr-tr">
+                                                    <th class="zr-th">
+                                                        <span class="t">名称</span>
+                                                    </th>
+                                                    <th class="zr-th">
+                                                        <span class="t">权重</span>
+                                                    </th>
+                                                    <th class="zr-th">
+                                                        <span class="t">当前指标值</span>
+                                                    </th>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可用性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可靠性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">防危性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">完整性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t abnormal">6</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可维护性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块五 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">虚拟机可信性子属性</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="norm-show-wrap">
+                                        <div class="zr-table-wrap">
+                                            <table class="zr-table-cont">
+                                                <tr class="zr-tr">
+                                                    <th class="zr-th">
+                                                        <span class="t">名称</span>
+                                                    </th>
+                                                    <th class="zr-th">
+                                                        <span class="t">权重</span>
+                                                    </th>
+                                                    <th class="zr-th">
+                                                        <span class="t">当前指标值</span>
+                                                    </th>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可用性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可靠性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">防危性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">完整性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t abnormal">6</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可维护性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块六 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">平台资源可信性子属性</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="norm-show-wrap">
+                                        <div class="zr-table-wrap">
+                                            <table class="zr-table-cont">
+                                                <tr class="zr-tr">
+                                                    <th class="zr-th">
+                                                        <span class="t">名称</span>
+                                                    </th>
+                                                    <th class="zr-th">
+                                                        <span class="t">权重</span>
+                                                    </th>
+                                                    <th class="zr-th">
+                                                        <span class="t">当前指标值</span>
+                                                    </th>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可用性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可靠性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">防危性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">完整性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t abnormal">6</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="zr-tr">
+                                                    <td class="zr-td">
+                                                        <span class="t">可维护性</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t">60%</span>
+                                                    </td>
+                                                    <td class="zr-td">
+                                                        <span class="t normal">78</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块七 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">平台资源可信性子属性</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <ul class="guide clear">
+                                        <li>
+                                            <p class="t">指标总计</p>
+                                            <p class="num">5600</p>
+                                        </li>
+                                        <li>
+                                            <p class="t">正常指标</p>
+                                            <p class="num">5600</p>
+                                        </li>
+                                        <li>
+                                            <p class="t">异常指标</p>
+                                            <p class="num">30</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块八 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">平台资源可信性子属性</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <ul class="guide clear">
+                                        <li>
+                                            <p class="t">指标总计</p>
+                                            <p class="num">5600</p>
+                                        </li>
+                                        <li>
+                                            <p class="t">正常指标</p>
+                                            <p class="num">5600</p>
+                                        </li>
+                                        <li>
+                                            <p class="t">异常指标</p>
+                                            <p class="num">30</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块九 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">平台资源可信性子属性</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <ul class="guide clear">
+                                        <li>
+                                            <p class="t">指标总计</p>
+                                            <p class="num">5600</p>
+                                        </li>
+                                        <li>
+                                            <p class="t">正常指标</p>
+                                            <p class="num">5600</p>
+                                        </li>
+                                        <li>
+                                            <p class="t">异常指标</p>
+                                            <p class="num">30</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块十 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">指标数据清洗</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="wash-wrap">
+                                        <div class="wash-txt">
+                                            <p class="t">指标总计 5600</p>
+                                            <p class="t">数据清洗 60</p>
+                                        </div>
+                                        <div class="wash-echarst">
+                                            <!-- 这里放echarst -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块十一 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">指标数据清洗</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="wash-wrap">
+                                        <div class="wash-txt">
+                                            <p class="t">指标总计 5600</p>
+                                            <p class="t">数据清洗 60</p>
+                                        </div>
+                                        <div class="wash-echarst">
+                                            <!-- 这里放echarst -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模块十二 -->
+                    <div class="item-list zr-lay-col3">
+                        <div class="item-mode">
+                            <div class="reveal-mode">
+                                <div class="reveal-head">
+                                    <p class="title">指标数据清洗</p>
+                                </div>
+                                <div class="reveal-cont">
+                                    <div class="wash-wrap">
+                                        <div class="wash-txt">
+                                            <p class="t">指标总计 5600</p>
+                                            <p class="t">数据清洗 60</p>
+                                        </div>
+                                        <div class="wash-echarst">
+                                            <!-- 这里放echarst -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 机器数据结束 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

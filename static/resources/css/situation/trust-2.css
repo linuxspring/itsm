@@ -1,0 +1,209 @@
+body {
+    background-color: #f7f7f7;
+}
+.zr-system-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.platform .go-back {
+    float: right;
+    margin-top: 5px;
+}
+.platform .data-tab-cont {
+    padding: 20px 0 0;
+    background-color: #fff;
+}
+.platform .overview-wrap {
+    position: relative;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+.platform .overview-mode {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #f2faff;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.platform .overview-mode .o-left {
+    display: table-cell;
+    position: relative;
+    padding-left: 107px;
+    width: 225px;
+    vertical-align: middle;
+    background: url("../../images/situation/icon-1.png") no-repeat 40px center #0096ff;
+}
+.platform .overview-mode .o-left .t {
+    font-size: 16px;
+    color: #fff;
+}
+.platform .overview-mode .o-left .n {
+    font-size: 30px;
+    color: #fff;
+}
+.platform .overview-mode .o-right {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    padding: 0 40px;
+    font-size: 18px;
+}
+.platform .item-wrap {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+}
+.platform .item-list {
+    position: relative;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.platform .item-mode {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.quota {
+    position: relative;
+    width: 100%;
+    height: 237px;
+}
+.quota .echarst-mode {
+    position: relative;
+    float: left;
+    width: 55%;
+    height: 100%;
+}
+.quota .echarst-info {
+    display: table;
+    position: relative;
+    float: left;
+    width: 45%;
+    height: 100%;
+}
+.quota .echarst-info .info-wrap {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    font-size: 0;
+}
+.quota .echarst-info .info-list {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 18px;
+}
+.quota .echarst-info .info-list .t {
+    position: relative;
+    padding-left: 14px;
+    font-size: 14px;
+    line-height: 1;
+    color: #666;
+}
+.quota .echarst-info .info-list .t:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.quota .echarst-info .state-1 .t:before {
+    background-color: #1ac570;
+}
+.quota .echarst-info .n {
+    line-height: 1;
+    font-size: 14px;
+}
+.quota .echarst-info .n span {
+    padding-top: 6px;
+    font-size: 20px;
+    line-height: 1;
+}
+.quota .echarst-info .state-2 .t:before {
+    background-color: #fe7c00;
+}
+.quota .echarst-tips {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    line-height: 1;
+    font-size: 16px;
+    z-index: 99;
+}
+.quota-2 .echarst-info {
+    width: 100%;
+    padding-left: 20px;
+}
+.norm-show-wrap {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+.norm-show-wrap .normal {
+    color: #1ac570;
+}
+.norm-show-wrap .abnormal {
+    color: #ff4143;
+}
+.guide {
+    position: relative;
+    width: 100%;
+}
+.guide>li {
+    position: relative;
+    float: left;
+    width: 33.3333333%;
+    padding: 20px 0;
+    text-align: center;
+}
+.guide>li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -24px;
+    width: 1px;
+    height: 48px;
+    background-color: #ddd;
+}
+.guide>li:first-child:after {
+    display: none;
+}
+.guide .t {
+    line-height: 1;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+.guide .num {
+    line-height: 1;
+    font-size: 30px;
+}
+.wash-wrap {
+    position: relative;
+    width: 100%;
+}
+.wash-wrap .wash-txt {
+    position: relative;
+    padding: 20px 0 10px;
+    text-align: center;
+}
+.wash-wrap .wash-txt .t {
+    display: inline-block;
+    line-height: 1;
+    margin: 0 20px; 
+}
+.wash-wrap .wash-echarst {
+    position: relative;
+    width: 100%;
+    height: 210px;
+}

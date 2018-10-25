@@ -1,0 +1,61 @@
+.flowstep{
+margin:0px;
+padding:0px;
+list-style: none;
+
+}
+.flowstep li{
+float:left;
+text-align:center;font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+.step-first{
+  color: #009349;
+background-position: 50% 0;
+}
+.step-done{
+background-position: 50% -170px;
+}
+.step-cur {
+  color: #009349;
+background-position: 50% 0;
+}
+.step-last{
+
+}
+.step-name{
+padding: 3px 0;
+  font-weight: 700;
+  color: #888;
+ }
+.step-no {
+  height: 34px;
+  line-height: 34px;
+  font-family: 'arial black';
+  color: #fff;
+  font-size: 18px;
+  background: url(../resources/eshop/stepver.png) no-repeat 50% -102px;
+}
+.flowstep .step-first .step-done .step-no {
+  background-position: 50% -204px;
+}
+.flowstep .step-cur .step-no {
+  background-position: 50% 0;
+}
+.flowstep .step-done .step-no {
+  background-position: 50% -170px;
+}
+.flowstep .step-last .step-no {
+  background-position: 50% -136px;
+}
+.flowstep .step-last .step-done .step-no {
+  background-position: 50% -68px;
+}
+
+.step-time {
+  color: #999;
+  padding: 8px 0;
+}
+.step-time {
+  color: #999;
+  padding: 8px 0;
+}

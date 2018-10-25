@@ -1,0 +1,15 @@
+.zr-kalendar-wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.zr-kalend-day,
+.zr-kalend-hours,
+.zr-kalend-years {
+    position: relative;
+    width: 100%;
+}
+.zr-kalend-day td,
+.zr-kalend-hours td {
+    padding: 6px;
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <title>可信指标</title>
+    <link rel="stylesheet" href="../../css/common/normalize.min.css">
+    <link rel="stylesheet" href="../../css/common/zr-css.css">
+    <link rel="stylesheet" href="../../plugin/table/table.css">
+    <link rel="stylesheet" href="../../plugin/calendar/calendar.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/item-common.css">
+    <link rel="stylesheet" href="../../css/report/report.css">
+    <script src="../../lib/jquery-1.12.3.min.js"></script>
+    <script src="../../plugin/calendar/calendar.js"></script>
+    <script src="../../lib/zr-css.js"></script>
+</head>
+<body>
+    <div class="zr-system-layout" id="zr-system-layout">
+        <div class="data-tab-mode platform">
+            <div class="data-tab-head">
+                <p class="title">珠海供电局云平台及虚拟机可信性报告详情</p>
+                <button class="sys-btn btn-blue-kx go-back">返回</button>
+            </div>
+            <div class="data-tab-cont">
+                <div class="report-title">
+                    <h1 class="title">珠海供电局云平台及虚拟机可信性报告详情</h1>
+                    <div class="title-info">
+                        <span class="t">报告编号:BG201801010001</span>
+                        <span class="t">南方电网珠海供电局</span>
+                    </div>
+                </div>
+                <div class="report-cont">
+                    <!-- 基本信息模块 -->
+                    <div class="concise-mode">
+                        <div class="concise-head">
+                            <p class="t">基本信息</p>
+                        </div>
+                        <div class="concise-cont">
+                            <div class="report-info-wrap">
+                                <div class="report-info-list">
+                                    <div class="zr-form-list">
+                                        <div class="zr-form-type">
+                                            <label for="" class="zr-form-label">标题</label>
+                                        </div>
+                                        <div class="zr-form-cont">
+                                            <input type="text" class="info" value="云平台与虚拟机日常运行可信性报告">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="report-info-list">
+                                    <div class="zr-form-list">
+                                        <div class="zr-form-type">
+                                            <label for="" class="zr-form-label">接收人</label>
+                                        </div>
+                                        <div class="zr-form-cont">
+                                            <input type="text" class="info" value="张三，李四，王五">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="report-info-list">
+                                    <div class="zr-form-list">
+                                        <div class="zr-form-type">
+                                            <label for="" class="zr-form-label">日期</label>
+                                        </div>
+                                        <div class="zr-form-cont">
+                                            <input type="text" class="info" value="2018-01-01 18:00">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 云平台概况模块 -->
+                    <div class="concise-mode">
+                        <div class="concise-head">
+                            <p class="t">云平台概况</p>
+                        </div>
+                        <div class="concise-cont">
+                            <div class="exhibit-wrap clear">
+                                <div class="exhibit-left">
+                                    <div class="reveal-mode">
+                                        <div class="reveal-head">
+                                            <p class="title">虚拟平台1</p>
+                                        </div>
+                                        <div class="reveal-cont">
+                                            <div class="echarst-wrap">
+                                                <div class="echarst-mode">
+                                                    <!-- 这里放置echarst图代码 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="exhibit-right">
+                                    <div class="reveal-mode">
+                                        <div class="reveal-head">
+                                            <p class="title">虚拟平台2</p>
+                                        </div>
+                                        <div class="reveal-cont">
+                                            <div class="echarst-wrap">
+                                                <!-- 这里放置echarst图代码 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 异常指标明细模块 -->
+                    <div class="concise-mode">
+                        <div class="concise-head">
+                            <p class="t">异常指标明细</p>
+                        </div>
+                        <div class="concise-cont">
+                            <div class="norm-show-wrap">
+                                <div class="zr-table-wrap">
+                                    <table class="zr-table-cont">
+                                        <tr class="zr-tr">
+                                            <th class="zr-th">
+                                                <span class="t">序号</span>
+                                            </th>
+                                            <th class="zr-th">
+                                                <span class="t">指标名称</span>
+                                            </th>
+                                            <th class="zr-th">
+                                                <span class="t">指标值</span>
+                                            </th>
+                                            <th class="zr-th">
+                                                <span class="t">单位</span>
+                                            </th>
+                                            <th class="zr-th">
+                                                <span class="t">提示</span>
+                                            </th>
+                                            <th class="zr-th">
+                                                <span class="t">正常参考</span>
+                                            </th>
+                                            <th class="zr-th">
+                                                <span class="t">采集时间</span>
+                                            </th>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-1">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-1">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-2">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-1">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-1">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-1">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-1">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="zr-tr">
+                                            <td class="zr-td">
+                                                <span class="t">1</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">内存使用率</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">60</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <div class="state-icon s-1">&nbsp;</div>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">0-50%</span>
+                                            </td>
+                                            <td class="zr-td">
+                                                <span class="t">2018-01-22</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="zr-page-wrap">
+                                    <button class="zr-page-btn zr-page-first">首页</button>
+                                    <button class="zr-page-btn zr-page-prev">&lt;上一页</button>
+                                    <button class="zr-page-btn zr-page-txt cur">1</button>
+                                    <button class="zr-page-btn zr-page-txt">2</button>
+                                    <button class="zr-page-btn zr-page-txt">3</button>
+                                    <button class="zr-page-btn zr-page-txt">4</button>
+                                    <button class="zr-page-btn zr-page-txt">...</button>
+                                    <button class="zr-page-btn zr-page-txt">12</button>
+                                    <button class="zr-page-btn zr-page-next">下一页&gt;</button>
+                                    <button class="zr-page-btn zr-page-last">末页</button>
+                                    <input type="text" class="zr-page-input">
+                                    <button class="zr-page-btn zr-page-go">跳转</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

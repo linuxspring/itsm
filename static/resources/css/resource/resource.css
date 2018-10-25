@@ -1,0 +1,124 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #f7f7f7;
+}
+.zr-system-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 110px 20px 20px;
+}
+.info-wrap {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+}
+.info-wrap .info-mode {
+    position: relative;
+    width: 100%;
+    padding: 20px 20px 20px 0;
+    background-color: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.info-wrap .zr-form-list {
+    float: left;
+    width: auto;
+}
+.info-wrap .zr-form-type {
+    padding-left: 40px;
+}
+.info-wrap .info {
+    width: 120px;
+    height: 28px;
+    line-height: 18px;
+    border: 1px solid #91cafb;
+    border-radius: 2px;
+}
+
+.resource-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.resource-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 270px;
+    background-color: #fff;
+    border-left: 1px solid #eee;
+    table-layout: fixed;
+    overflow: hidden;
+}
+.resource-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100%;
+    vertical-align: top;
+    border-right: 1px solid #eee;
+}
+.resource-right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    vertical-align: top;
+}
+.resource-tree-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 56px 0 10px;;
+}
+.resource-search {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    padding: 0 20px;
+}
+.resource-tree-mode {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+.resource-tree {
+    position: relative;
+    width: 100%;
+}
+.resource-cont {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+.resource-cont .zr-table-wrap {
+    border: 1px solid #eee;
+}
+.resource-cont .zr-table-wrap .zr-td:first-child {
+    width: 300px;
+}
+.zr-stand-scroll-mode {
+    right: 5px;
+}
+.zr-stand-scroll-mode,
+.zr-across-scroll-mode {
+    background: transparent;
+}
+.zr-stand-scroll-bar,
+.zr-across-scroll-bar{
+    background-color: #8ddef8;
+}

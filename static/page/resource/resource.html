@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <title>资源树</title>
+    <link rel="stylesheet" href="../../css/common/normalize.min.css">
+    <link rel="stylesheet" href="../../css/common/zr-css.css">
+    <link rel="stylesheet" href="../../plugin/table/table.css">
+    <link rel="stylesheet" href="../../plugin/tree/tree.css">
+    <link rel="stylesheet" href="../../plugin/scroll/scroll.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/common/item-common.css">
+    <link rel="stylesheet" href="../../css/resource/resource.css">
+    <script src="../../lib/jquery-1.12.3.min.js"></script>
+    <script src="../../plugin/tree/tree.js"></script>
+    <script src="../../plugin/scroll/scroll.js"></script>
+    <script src="../../lib/zr-css.js"></script>
+    <script src="../../js/resource/resource.js"></script>
+</head>
+<body>
+    <div class="zr-system-layout zr-css" id="zr-system-layout">
+        <div class="info-wrap">
+            <div class="info-mode clear">
+                <div class="zr-form-list">
+                    <div class="zr-form-type">
+                        <label for="" class="zr-form-label">虚拟平台</label>
+                    </div>
+                    <div class="zr-form-cont">
+                        <input type="text" class="info">
+                    </div>
+                </div>
+                <div class="zr-form-list">
+                    <div class="zr-form-type">
+                        <label for="" class="zr-form-label">物理机</label>
+                    </div>
+                    <div class="zr-form-cont">
+                        <input type="text" class="info">
+                    </div>
+                </div>
+                <div class="zr-form-list">
+                    <div class="zr-form-type">
+                        <label for="" class="zr-form-label">虚拟机</label>
+                    </div>
+                    <div class="zr-form-cont">
+                        <input type="text" class="info">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resource-main">
+            <div class="resource-wrap">
+                <div class="resource-left">
+                    <div class="resource-tree-wrap">
+                        <div class="resource-search">
+                            <div class="form-wrap">
+                                <div class="input select-input">
+                                    <div class="select-view">
+                                        <span>虚拟平台 01</span>
+                                        <input type="hidden" value="2017年">
+                                        <em></em>
+                                    </div>
+                                    <div class="select-option">
+                                        <ul class="option-list">
+                                            <li class="o-data cur" title="虚拟平台 01" data-val="虚拟平台 01">虚拟平台 01</li>
+                                            <li class="o-data" title="虚拟平台 02" data-val="虚拟平台 02">虚拟平台 02</li>
+                                            <li class="o-data" title="虚拟平台 03" data-val="虚拟平台 03">虚拟平台 03</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resource-tree-mode">
+                            <div class="resource-tree"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-right">
+                    <div class="resource-cont">
+                        <div class="zr-table-wrap">
+                            <table class="zr-table-cont">
+                                <tr class="zr-tr">
+                                    <th class="zr-th th-1" colspan="2">
+                                        <span class="t">详情</span>
+                                    </th>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">ID</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t">00001</span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">资源名称</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t">物理机1</span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">IP地址</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t">192.168.2.13</span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">品牌</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t">HP</span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">型号</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t"></span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">CPU型号</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t"></span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">CPU核数</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t">8核</span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">物理内存容量</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t">2X32G</span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">网卡名称</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t"></span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">操作系统类型</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t">LINUX</span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">端口数量</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t"></span>
+                                    </td>
+                                </tr>
+                                <tr class="zr-tr">
+                                    <td class="zr-td">
+                                        <span class="t">所属虚拟平台ID</span>
+                                    </td>
+                                    <td class="zr-td">
+                                        <span class="t"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body {
+    background-color: #f7f7f7;
+}
+.zr-system-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.platform .go-back {
+    float: right;
+    margin-top: 5px;
+}
+.platform .data-tab-cont {
+    padding: 20px 0 0;
+    background-color: #fff;
+}
+.report-title {
+    position: relative;
+    width: 100%;
+    padding: 24px 30px 30px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.report-title .title {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+.report-title .t {
+    line-height: 1;
+    font-size: 14px;
+    color: #999;
+    margin: 0 30px;
+}
+.report-cont {
+    position: relative;
+    width: 100%;
+    padding: 10px 20px 0;
+}
+.report-info-wrap {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-right: 53px;
+    table-layout: fixed;
+    margin-bottom: 30px;
+}
+.report-info-list {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+}
+.report-info-list .info {
+    width: 100%;
+    height: 28px;
+    line-height: 18px;
+    border: 1px solid #91cafb;
+    border-radius: 2px;
+}
+.report-info-list .zr-form-type {
+    width: 90px;
+}
+.report-info-list .zr-form-cont {
+    padding-right: 25px;
+}
+
+.exhibit-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.exhibit-left,
+.exhibit-right {
+    float: left;
+    position: relative;
+    width: 50%;
+}
+.exhibit-left {
+    padding-right: 10px;
+}
+.exhibit-right {
+    padding-left: 10px;
+}
+.exhibit-wrap .echarst-wrap {
+    height: 258px;
+}
+
+.norm-show-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.norm-show-wrap .zr-table-wrap {
+    margin-bottom: 24px;
+}
+.norm-show-wrap .zr-table-wrap .state-icon {
+    display: inline-block;
+    width: 9px;
+    height: 12px;
+    vertical-align: middle;
+}
+.norm-show-wrap .zr-table-wrap .state-icon.s-1 {
+    background: url("../../images/common/icon-17.png") no-repeat center;
+}
+.norm-show-wrap .zr-table-wrap .state-icon.s-2 {
+    background: url("../../images/common/icon-18.png") no-repeat center;
+}

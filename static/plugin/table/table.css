@@ -1,0 +1,131 @@
+.zr-table-wrap {
+    position: relative;
+    width: 100%;
+}
+.zr-table-cont,
+.zr-table-cont-wrap {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+}
+.zr-table-cont .zr-th,
+.zr-table-cont .zr-td {
+    position: relative;
+    padding: 5px 6px;
+    height: 34px;
+    text-align: center;
+}
+.zr-table-cont .zr-th {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-width: 1px 0;
+    color: #333;
+}
+.zr-table-cont .zr-td {
+    border: 1px solid #ddd;
+    border-width: 1px 0;
+}
+.zr-table-cont span.t {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+.zr-table-nowrap span.t,
+.zr-table-nowrap .zr-table-handle,
+.zr-table-nowrap .zr-table-handle .t {
+    white-space: nowrap;
+}
+
+.zr-table-ellipsis span.t,
+.zr-table-ellipsis .zr-table-handle,
+.zr-table-ellipsis .zr-table-handle .t {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.zr-table-wrap .zr-table-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    z-index: 9999;
+    margin-left: -3px;
+    background: transparent;
+    border-right: 1px solid transparent;
+    /* background-color: #0ae; */
+    cursor: col-resize;
+    /* opacity: .5;
+    filter: alpha(opacity=50);
+    opacity: 0;
+    filter: alpha(opacity=0); */
+}
+.zr-table-wrap .zr-table-line.active {
+    border-right-color: #0ae;
+}
+.zr-table-wrap .zr-table-line-move {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    z-index: 9998;
+    background-color: #0ae;
+    cursor: default;
+}
+.zr-row-table-wrap,
+.zr-col-table-wrap,
+.zr-row-col-table-wrap {
+    transform: translate3d(0, 0, 0);
+}
+.zr-table-main-mode {
+    position: relative;
+    width: auto;
+}
+
+
+.zr-table-wrap-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    display: none;
+    z-index: 999998;
+    cursor: col-resize;
+}
+.zr-table-row-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+.zr-table-col-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    overflow: hidden;
+    z-index: 2;
+}
+.zr-table-top-left-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    z-index: 3;
+}
+.zr-table-col-line-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+}
